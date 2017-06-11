@@ -1,3 +1,15 @@
+body {
+  font-family: Garamond;
+}
+
+button {
+  background-color: #ff0000;
+  border: 2px solid #ff0000;
+  border-radius: 8px;
+  font-family: Palatino;
+  font-size: 40px;
+}
+
 #container { 
   bottom: 0;
   height: 100%;
@@ -9,6 +21,45 @@
   width: 100%;
 }
 
-input {
+h2 {
   display: inline;
+}
+
+.headers {
+  padding-bottom: 15px;
+}
+
+.highbound {
+  margin-left: 60px;
+}
+
+.highhead {
+  margin-left: 30px;
+}
+
+input {
+  background-color: #2E86C1;
+  border: 2px solid #2E86C1;
+  border-radius: 4px;
+  font-size: 40px;
+  text-align: center;
+  width: 5%;
+}
+
+.lowbound {
+  margin-right: 60px;
+}
+
+.lowhead {
+  margin-right: 30px;
+}
+
+.randnum {
+  background-color: #8000ff;
+  border: 2px solid #8000ff;
+  border-radius: 4px;
+  font-size: 70px;
+  margin-left: 40%;
+  margin-right: 40%;
+  width: 20%;
 }

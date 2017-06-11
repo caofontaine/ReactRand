@@ -38,13 +38,17 @@ class RandomNum extends React.Component {
   render() {  
     return (
       <div>
-        <h2>Low Bound</h2>
-        <input type="text" className="lowbound" onChange={this.handleLowBound.bind(this)} value={this.state.lowBound}/>
+        <h1>Random Number Generator</h1>
         
-        <h2>High Bound</h2>
+        <div className="headers">
+          <h2 className="lowhead">Low Bound</h2>
+          <h2 className="highhead">High Bound</h2>
+        </div>
+        
+        <input type="text" className="lowbound" onChange={this.handleLowBound.bind(this)} value={this.state.lowBound}/>
         <input type="text" className="highbound" onChange={this.handleHighBound.bind(this)} value={this.state.highBound}/>
         
-        <p>{this.state.randomNum}</p>
+        <p className="randnum">{this.state.randomNum}</p>
         <button onClick={this.onRandomizeClick.bind(this)}>Generate</button>
       </div>
     );
