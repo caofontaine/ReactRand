@@ -25,13 +25,22 @@ class RandomNum extends React.Component {
   
   onRandomizeClick(evt) {
     var low = parseInt(this.state.lowBound), high = parseInt(this.state.highBound);
+    var animate, curState = this;
+    var startTime = new Date().getTime();  //Start time of when the button is clicked.
     if(low >= high) {
       alert("Bounds are incorrect.");
     }
     else {
-      this.setState({
-        randomNum: Math.floor((Math.random() * ((high-low) + 1)) + low)
-      });
+      animate = setInterval(function() {
+        if (new Date().getTime() - startTime > 2000) {
+          clearInterval(animate); //Stop animating after 2 seconds
+        }
+        else {
+          curState.setState({
+            randomNum: Math.floor((Math.random() * ((high-low) + 1)) + low)
+          });
+        }
+      }, 100);
     }
   }
   
