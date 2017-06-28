@@ -1,3 +1,11 @@
+/*
+  Set all elements to have border-box property to ensure border 
+  and padding are including in total height and width.
+*/
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Garamond;
 }
@@ -11,14 +19,7 @@ button {
 }
 
 #container { 
-  bottom: 0;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  right: 0;
   text-align: center;
-  top: 0;
-  width: 100%;
 }
 
 h2 {
@@ -43,7 +44,7 @@ input {
   border-radius: 4px;
   font-size: 40px;
   text-align: center;
-  width: 5%;
+  width: 80%;
 }
 
 .lowbound {
@@ -59,7 +60,34 @@ input {
   border: 2px solid #8000ff;
   border-radius: 4px;
   font-size: 70px;
-  margin-left: 40%;
-  margin-right: 40%;
-  width: 20%;
 }
+
+/*
+  Clear the flow since columns are floated and treated as if they don’t exist.
+*/
+.row::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+div[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+/*
+  Determines how much the column should span in a row.
+*/
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
